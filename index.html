@@ -526,133 +526,39 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
   };
 
   const MOVIES = [
-    {t:"Interstellar", y:2014, dir:"Christopher Nolan", dk:169, imdb:8.6,
-     genres:["bilimkurgu","dram"], eras:["gelecek","e21"],
-     syn:"Dünya yaşanmaz hale geldiğinde, bir grup bilim insanı insanlığa yeni bir yurt bulmak için zaman ve uzayın ötesine yolculuk eder; aynı zamanda derin bir baba-kız hikâyesi anlatır.",
-     guclu:["Duygusal olarak güçlü senaryo","Görsel efekt ve sinematografi","Hans Zimmer'ın unutulmaz müzikleri","Bilimsel gerçeklikle kurgunun dengesi"],
-     farkli:["Bilimsel kavramlar (görelilik, kütle-çekim) bazı izleyicilere karmaşık gelebilir","Zaman algısı ve son sahne farklı yorumlanabilir"]},
-    {t:"Inception", y:2010, dir:"Christopher Nolan", dk:148, imdb:8.8,
-     genres:["bilimkurgu","gerilim","aksiyon"], eras:["e21"],
-     syn:"Rüyalara girip fikir çalan bir ekip, bu kez tam tersini yapıp birinin zihnine bir fikir yerleştirme görevini üstlenir; katman katman ilerleyen bir zihin oyunu.",
-     guclu:["Özgün ve karmaşık kurgu yapısı","Etkileyici pratik efektler","Zamanla akan gerilim"],
-     farkli:["Çok katmanlı zaman akışı ilk izlemede kafa karıştırabilir","Final sahnesi (topaç) izleyiciye göre değişen yorumlara açık"]},
-    {t:"Forrest Gump", y:1994, dir:"Robert Zemeckis", dk:142, imdb:8.8,
-     genres:["dram","romantik","komedi"], eras:["e20"],
-     syn:"Sıra dışı bir zekâya sahip olmayan ama saf bir kalple hayata bakan Forrest'ın, 20. yüzyılın büyük olaylarına tanıklık ettiği ilham verici yolculuğu.",
-     guclu:["Sıcak ve içten anlatım","Tarihsel olaylarla harmanlanmış kurgu","Unutulmaz replikler"],
-     farkli:["Bazı tarihi olayların basitleştirilmiş sunumu eleştiri konusu olabilir"]},
-    {t:"The Shawshank Redemption", y:1994, dir:"Frank Darabont", dk:142, imdb:9.3,
-     genres:["dram"], eras:["e20"],
-     syn:"Haksız yere hapse düşen bir bankacının, umudunu hiç kaybetmeden hapishane hayatında kurduğu dostluk ve özgürlük arayışının hikâyesi.",
-     guclu:["Güçlü karakter gelişimi","Umut temasının ustaca işlenişi","Anlatıcı sesin etkisi"],
-     farkli:["Ağır tempolu anlatım bazı izleyiciler için yavaş olabilir"]},
-    {t:"The Pursuit of Happyness", y:2006, dir:"Gabriele Muccino", dk:117, imdb:8.0,
-     genres:["dram"], eras:["e21"],
-     syn:"Evsiz kalan bir baba, küçük oğluyla birlikte tüm zorluklara rağmen daha iyi bir hayat kurmak için mücadele eder; gerçek bir hikâyeden ilham alır.",
-     guclu:["İlham verici gerçek hikâye","Baba-oğul ilişkisinin samimi işlenişi","Will Smith'in performansı"],
-     farkli:["Duygusal manipülasyon içerdiğini düşünenler olabilir"]},
-    {t:"The Lion King", y:1994, dir:"Roger Allers, Rob Minkoff", dk:88, imdb:8.5,
-     genres:["animasyon","dram","fantastik"], eras:["belirsiz"],
-     syn:"Genç aslan Simba, babasının ölümünün ardından kendi kimliğini ve yerini bulma yolculuğuna çıkar; Afrika savanlarında geçen bir büyüme hikâyesi.",
-     guclu:["Zamansız müzikler","Güçlü görsel anlatım","Evrensel büyüme teması"],
-     farkli:["Kral Simba'nın 'kader' anlatısı bazılarına fazla klasik gelebilir"]},
-    {t:"12 Angry Men", y:1957, dir:"Sidney Lumet", dk:96, imdb:9.0,
-     genres:["dram","gerilim"], eras:["e20"],
-     syn:"On iki jüri üyesi, tek bir odada bir gencin kaderini tartışırken önyargı, mantık ve vicdan arasında sıkışır.",
-     guclu:["Tek mekanda kurulan yoğun gerilim","Diyalog odaklı usta işi senaryo","Karakter analizlerinin derinliği"],
-     farkli:["Siyah-beyaz ve yavaş tempo bazı modern izleyicilere ağır gelebilir"]},
-    {t:"Spirited Away", y:2001, dir:"Hayao Miyazaki", dk:125, imdb:8.6,
-     genres:["animasyon","fantastik"], eras:["belirsiz"],
-     syn:"Ailesiyle taşınırken ruhlar dünyasına sürüklenen küçük Chihiro'nun, ailesini kurtarmak için tuhaf bir hamamda çalışmak zorunda kaldığı büyülü hikâye.",
-     guclu:["Zengin görsel hayal gücü","Güçlü büyüme ve cesaret teması","Miyazaki'ye özgü el çizimi animasyon"],
-     farkli:["Doğrusal olmayan anlatım bazı izleyicilere kapalı gelebilir"]},
-    {t:"The Truman Show", y:1998, dir:"Peter Weir", dk:103, imdb:8.2,
-     genres:["dram","bilimkurgu","komedi"], eras:["e20"],
-     syn:"Tüm hayatının bir TV şovu olduğunu fark etmeyen Truman'ın, gerçeği keşfedip özgürlüğünü arama sürecini anlatan öngörülü bir hikâye.",
-     guclu:["Şaşırtıcı derecede güncel kalan teması","Jim Carrey'nin dramatik performansı","Akıllıca kurulmuş metafor"],
-     farkli:["Finalin iyimserliği bazı izleyicilere gerçekçi gelemez"]},
-    {t:"Whiplash", y:2014, dir:"Damien Chazelle", dk:106, imdb:8.5,
-     genres:["dram"], eras:["e21"],
-     syn:"Mükemmelliğe takıntılı genç bir baterist ile onu sınırlarının ötesine iten acımasız bir eğitmenin gerilim dolu ilişkisi.",
-     guclu:["Yoğun tempo ve kurgu","Müzik sahnelerinin enerjisi","Karakterler arası güç dinamiği"],
-     farkli:["Eğitmenin yöntemleri izleyiciye göre kabul edilebilir ya da rahatsız edici bulunabilir"]},
-    {t:"Life of Pi", y:2012, dir:"Ang Lee", dk:127, imdb:7.9,
-     genres:["fantastik","dram"], eras:["e20"],
-     syn:"Bir gemi kazasından sonra bir kaplanla aynı can filikasında kalan genç Pi'nin, hayatta kalma ve inanç üzerine düşündüren hikâyesi.",
-     guclu:["Etkileyici görsel efektler","Felsefi derinlik","Hayatta kalma temasının işlenişi"],
-     farkli:["Ana hikâyenin gerçek mi alegori mi olduğu tartışmaya açık bırakılır"]},
-    {t:"The Martian", y:2015, dir:"Ridley Scott", dk:144, imdb:8.0,
-     genres:["bilimkurgu","dram"], eras:["gelecek","e21"],
-     syn:"Mars'ta tek başına mahsur kalan bir astronotun, bilim ve azimle hayatta kalma mücadelesini anlatan umut dolu bir bilim kurgu.",
-     guclu:["Bilimsel gerçekçiliğe verilen önem","İyimser ve mizahi ton","Sürükleyici tempo"],
-     farkli:["Bazı teknik çözümler basitleştirilmiş bulunabilir"]},
-    {t:"Gladiator", y:2000, dir:"Ridley Scott", dk:155, imdb:8.5,
-     genres:["tarihi","aksiyon","dram"], eras:["belirsiz"],
-     syn:"Ailesi katledilen bir Roma generalinin, gladyatör olarak arenada intikam ve onur arayışı.",
-     guclu:["Görkemli sahne tasarımı","Güçlü ana karakter yolculuğu","Etkileyici müzikler"],
-     farkli:["Tarihsel doğruluktan bazı noktalarda uzaklaşılmış olması"]},
-    {t:"Titanic", y:1997, dir:"James Cameron", dk:195, imdb:7.9,
-     genres:["romantik","dram","tarihi"], eras:["e19","e20"],
-     syn:"Batmaya mahkum bir geminin güvertesinde, farklı sosyal sınıflardan iki gencin imkânsız aşkının hikâyesi.",
-     guclu:["Görsel olarak çığır açan efektler","Duygusal yoğunluk","Dönemin atmosferinin yansıtılışı"],
-     farkli:["Uzun süresi ve romantik ton bazı izleyicilere fazla gelebilir"]},
-    {t:"The Green Mile", y:1999, dir:"Frank Darabont", dk:189, imdb:8.6,
-     genres:["dram","fantastik"], eras:["e20"],
-     syn:"Bir hapishane koğuşunda çalışan gardiyanın, olağanüstü bir güce sahip mahkumla tanışmasıyla değişen bakış açısı.",
-     guclu:["Duygusal derinlik","Güçlü yan karakterler","Ahlaki sorgulama"],
-     farkli:["Uzun süresi ve ağır temposu bazı izleyicilere zorlayıcı gelebilir"]},
-    {t:"Coraline", y:2009, dir:"Henry Selick", dk:100, imdb:7.7,
-     genres:["animasyon","fantastik"], eras:["e21"],
-     syn:"Yeni evinde sıkılan Coraline, duvardaki gizli kapıdan 'diğer' ve tehlikeli bir dünyaya adım atar.",
-     guclu:["Stop-motion animasyonun özgünlüğü","Atmosferik görsel tasarım","Cesaret temasının işlenişi"],
-     farkli:["Karanlık atmosferi bazı küçük izleyiciler için ürkütücü olabilir"]},
-    {t:"Free Solo", y:2018, dir:"Elizabeth Chai Vasarhelyi, Jimmy Chin", dk:100, imdb:8.1,
-     genres:["belgesel"], eras:["e21"],
-     syn:"Tırmanıcı Alex Honnold'un hiçbir ip veya ekipman kullanmadan El Capitan'ı tırmanma girişimini konu alan nefes kesici belgesel.",
-     guclu:["Gerçek gerilim ve risk hissi","Etkileyici görüntüleme teknikleri","İnsan azminin portresi"],
-     farkli:["Risk alma davranışının yüceltildiğini düşünenler olabilir"]},
-    {t:"The Grand Budapest Hotel", y:2014, dir:"Wes Anderson", dk:99, imdb:8.1,
-     genres:["komedi","dram"], eras:["e20"],
-     syn:"Efsanevi bir otelin konsiyerjiyle genç yamağının, bir cinayet gizemi ve miras kavgasına karıştığı renkli bir macera.",
-     guclu:["Özgün görsel estetik ve simetri","Hızlı ve esprili diyaloglar","Nostaljik anlatım tarzı"],
-     farkli:["Wes Anderson'a özgü stilize anlatım herkesin zevkine hitap etmeyebilir"]},
-    {t:"Klaus", y:2019, dir:"Sergio Pablos", dk:96, imdb:8.2,
-     genres:["animasyon","komedi"], eras:["e19"],
-     syn:"Uzak bir kasabaya sürgün edilen bencil bir postacının, gizemli bir marangozla dostluğu sayesinde Noel Baba efsanesinin nasıl doğduğunu anlatan sıcak hikâye.",
-     guclu:["Özgün ışıklandırma teknikleri","Sıcak dostluk ve iyilik teması","Akıcı mizah"],
-     farkli:["Klasik Noel filmi kalıplarını takip etmesi bazılarına tahmin edilebilir gelebilir"]},
-    {t:"Chef", y:2014, dir:"Jon Favreau", dk:114, imdb:7.3,
-     genres:["komedi","dram"], eras:["e21"],
-     syn:"Kariyerinde tıkanan bir şefin, küçük bir yemek kamyonuyla yeniden tutkusunu ve oğluyla bağını bulma hikâyesi.",
-     guclu:["Sıcak baba-oğul ilişkisi","Yemek kültürüne olan sevgi","Keyifli ve rahat tempo"],
-     farkli:["Bazı çatışmaların hızlı çözülmesi gerçekçilikten uzaklaşabilir"]},
-    {t:"March of the Penguins", y:2005, dir:"Luc Jacquet", dk:80, imdb:7.5,
-     genres:["belgesel"], eras:["e21"],
-     syn:"Antarktika'nın zorlu koşullarında imparator penguenlerin üreme döngüsünü ve hayatta kalma azmini anlatan görkemli bir doğa belgeseli.",
-     guclu:["Etkileyici doğa görüntüleri","Sabırlı ve dingin anlatım","Hayatta kalma temasının vurgusu"],
-     farkli:["Yavaş tempo bazı izleyiciler için sabır gerektirebilir"]},
-    {t:"Amélie", y:2001, dir:"Jean-Pierre Jeunet", dk:122, imdb:8.3,
-     genres:["romantik","komedi"], eras:["e20"],
-     syn:"Paris'te yaşayan hayalperest Amélie'nin, çevresindekilerin hayatına gizlice iyilik yaparken kendi aşkını bulma hikâyesi.",
-     guclu:["Renkli ve masalsı görsel dil","Sevimli ve özgün karakter","Paris'in büyülü bir şekilde resmedilişi"],
-     farkli:["Aşırı stilize anlatım bazı izleyicilere yapmacık gelebilir"]},
-    {t:"Paddington 2", y:2017, dir:"Paul King", dk:103, imdb:7.8,
-     genres:["komedi","fantastik"], eras:["e21"],
-     syn:"Nazik ayı Paddington, sevdiği bir hediyeyi çalınca kendini bir maceranın ve haksız bir suçlamanın içinde bulur.",
-     guclu:["Sıcak ve nazik mizah anlayışı","Görsel yaratıcılık","İyimser ve şefkatli ton"],
-     farkli:["Bazı izleyiciler için fazla tatlı/naif bulunabilir"]},
-    {t:"Hidden Figures", y:2016, dir:"Theodore Melfi", dk:127, imdb:7.8,
-     genres:["dram","tarihi","belgesel"], eras:["e20"],
-     syn:"NASA'nın uzay yarışında kilit rol oynayan üç Afro-Amerikalı kadın matematikçinin, engellere rağmen başarıya ulaşma hikâyesi.",
-     guclu:["İlham verici gerçek olaylar","Güçlü kadın karakterler","Tarihsel bağlamın öğretici sunumu"],
-     farkli:["Dramatik unsurların bazı yerlerde yumuşatıldığı düşünülebilir"]}
+    {t:"Interstellar", y:2014, dir:"Christopher Nolan", dk:169, imdb:8.6, genres:["bilimkurgu","dram"], eras:["gelecek","e21"], syn:"Dünya yaşanmaz hale geldiğinde, bir grup bilim insanı insanlığa yeni bir yurt bulmak için zaman ve uzayın ötesine yolculuk eder; aynı zamanda derin bir baba-kız hikâyesi anlatır.", guclu:["Duygusal olarak güçlü senaryo","Görsel efekt ve sinematografi","Hans Zimmer'ın unutulmaz müzikleri"], farkli:["Bilimsel kavramlar bazı izleyicilere karmaşık gelebilir"]},
+    {t:"Inception", y:2010, dir:"Christopher Nolan", dk:148, imdb:8.8, genres:["bilimkurgu","gerilim","aksiyon"], eras:["e21"], syn:"Rüyalara girip fikir çalan bir ekip, bu kez tam tersini yapıp birinin zihnine bir fikir yerleştirme görevini üstlenir; katman katman ilerleyen bir zihin oyunu.", guclu:["Özgün kurgu yapısı","Etkileyici pratik efektler","Zamanla akan gerilim"], farkli:["Çok katmanlı zaman akışı kafa karıştırabilir"]},
+    {t:"Forrest Gump", y:1994, dir:"Robert Zemeckis", dk:142, imdb:8.8, genres:["dram","romantik","komedi"], eras:["e20"], syn:"Sıra dışı bir zekâya sahip olmayan ama saf bir kalple hayata bakan Forrest'ın, 20. yüzyılın büyük olaylarına tanıklık ettiği ilham verici yolculuğu.", guclu:["Sıcak ve içten anlatım","Tarihsel olaylarla harmanlanmış kurgu","Unutulmaz replikler"], farkli:["Basitleştirilmiş tarihsel sunumlar eleştirilebilir"]},
+    {t:"The Shawshank Redemption", y:1994, dir:"Frank Darabont", dk:142, imdb:9.3, genres:["dram"], eras:["e20"], syn:"Haksız yere hapse düşen bir bankacının, umudunu hiç kaybetmeden hapishane hayatında kurduğu dostluk ve özgürlük arayışının hikâyesi.", guclu:["Güçlü karakter gelişimi","Umut temasının ustaca işlenişi"], farkli:["Ağır tempolu anlatım bazı izleyiciler için yavaş gelebilir"]},
+    {t:"The Pursuit of Happyness", y:2006, dir:"Gabriele Muccino", dk:117, imdb:8.0, genres:["dram"], eras:["e21"], syn:"Evsiz kalan bir baba, küçük oğluyla birlikte tüm zorluklara rağmen daha iyi bir hayat kurmak için mücadele eder; gerçek bir hikâyeden ilham alır.", guclu:["İlham verici gerçek hikâye","Baba-oğul ilişkisinin samimi işlenişi"], farkli:["Duygusal yönü ağırlıklı bir yapıya sahip"]},
+    {t:"The Lion King", y:1994, dir:"Roger Allers, Rob Minkoff", dk:88, imdb:8.5, genres:["animasyon","dram","fantastik"], eras:["belirsiz"], syn:"Genç aslan Simba, babasının ölümünün ardından kendi kimliğini ve yerini bulma yolculuğuna çıkar; Afrika savanlarında geçen bir büyüme hikâyesi.", guclu:["Zamansız müzikler","Güçlü görsel anlatım","Evrensel tema"], farkli:["Klasik bir kader anlatısı sunar"]},
+    {t:"12 Angry Men", y:1957, dir:"Sidney Lumet", dk:96, imdb:9.0, genres:["dram","gerilim"], eras:["e20"], syn:"On iki jüri üyesi, tek bir odada bir gencin kaderini tartışırken önyargı, mantık ve vicdan arasında sıkışır.", guclu:["Tek mekanda kurulan yoğun gerilim","Diyalog odaklı usta işi senaryo"], farkli:["Siyah-beyaz yapısı modern izleyicilere yavaş gelebilir"]},
+    {t:"Spirited Away", y:2001, dir:"Hayao Miyazaki", dk:125, imdb:8.6, genres:["animasyon","fantastik"], eras:["belirsiz"], syn:"Ailesiyle taşınırken ruhlar dünyasına sürüklenen küçük Chihiro'nun, ailesini kurtarmak için tuhaf bir hamamda çalışmak zorunda kaldığı büyülü hikâye.", guclu:["Zengin görsel hayal gücü","Güçlü büyüme ve cesaret teması"], farkli:["Doğrusal olmayan yapı barındırır"]},
+    {t:"The Truman Show", y:1998, dir:"Peter Weir", dk:103, imdb:8.2, genres:["dram","bilimkurgu","komedi"], eras:["e20"], syn:"Tüm hayatının bir TV şovu olduğunu fark etmeyen Truman'ın, gerçeği keşfedip özgürlüğünü arama sürecini anlatan öngörülü bir hikâye.", guclu:["Şaşırtıcı derecede güncel tema","Jim Carrey'nin performansı"], farkli:["Finalin iyimserliği herkesi tatmin etmeyebilir"]},
+    {t:"Whiplash", y:2014, dir:"Damien Chazelle", dk:106, imdb:8.5, genres:["dram"], eras:["e21"], syn:"Mükemmelliğe takıntılı genç bir baterist ile onu sınırlarının ötesine iten acımasız bir eğitmenin gerilim dolu ilişkisi.", guclu:["Yoğun tempo ve kurgu","Müzik sahnelerinin enerjisi"], farkli:["Eğitmenin yöntemleri tartışmalıdır"]},
+    {t:"Life of Pi", y:2012, dir:"Ang Lee", dk:127, imdb:7.9, genres:["fantastik","dram"], eras:["e20"], syn:"Bir gemi kazasından sonra bir kaplanla aynı can filikasında kalan genç Pi'nin, hayatta kalma ve inanç üzerine düşündüren hikâyesi.", guclu:["Etkileyici görsel efektler","Felsefi derinlik"], farkli:["Alegorik bir anlatımı vardır"]},
+    {t:"The Martian", y:2015, dir:"Ridley Scott", dk:144, imdb:8.0, genres:["bilimkurgu","dram"], eras:["gelecek","e21"], syn:"Mars'ta tek başına mahsur kalan bir astronotun, bilim ve azimle hayatta kalma mücadelesini anlatan umut dolu bir bilim kurgu.", guclu:["Bilimsel gerçekçilik","İyimser ve mizahi ton"], farkli:["Teknik çözümler basitleştirilmiş olabilir"]},
+    {t:"Gladiator", y:2000, dir:"Ridley Scott", dk:155, imdb:8.5, genres:["tarihi","aksiyon","dram"], eras:["belirsiz"], syn:"Ailesi katledilen bir Roma generalinin, gladyatör olarak arenada intikam ve onur arayışı.", guclu:["Görkemli sahne tasarımı","Güçlü ana karakter yolculuğu"], farkli:["Tarihsel doğruluk payı esnetilmiştir"]},
+    {t:"Titanic", y:1997, dir:"James Cameron", dk:195, imdb:7.9, genres:["romantik","dram","tarihi"], eras:["e19","e20"], syn:"Batmaya mahkum bir geminin güvertesinde, farklı sosyal sınıflardan iki gencin imkânsız aşkının hikâyesi.", guclu:["Görsel olarak çığır açan efektler","Duygusal yoğunluk"], farkli:["Uzun sürelidir"]},
+    {t:"The Green Mile", y:1999, dir:"Frank Darabont", dk:189, imdb:8.6, genres:["dram","fantastik"], eras:["e20"], syn:"Bir hapishane koğuşunda çalışan gardiyanın, olağanüstü bir güce sahip mahkumla tanışmasıyla değişen bakış açısı.", guclu:["Duygusal derinlik","Güçlü yan karakterler"], farkli:["Ağır ve dramatik bir yapısı vardır"]},
+    {t:"Coraline", y:2009, dir:"Henry Selick", dk:100, imdb:7.7, genres:["animasyon","fantastik"], eras:["e21"], syn:"Yeni evinde sıkılan Coraline, duvardaki gizli kapıdan 'diğer' ve tehlikeli bir dünyaya adım atar.", guclu:["Stop-motion özgünlüğü","Atmosferik tasarım"], farkli:["Karanlık tonlara sahiptir"]},
+    {t:"Free Solo", y:2018, dir:"Elizabeth Chai Vasarhelyi, Jimmy Chin", dk:100, imdb:8.1, genres:["belgesel"], eras:["e21"], syn:"Tırmanıcı Alex Honnold'un ip kullanmadan El Capitan'ı tırmanma girişimini konu alan nefes kesici belgesel.", guclu:["Gerçek gerilim hissi","İnsan azmi"], farkli:["Yüksek risk içerir"]},
+    {t:"The Grand Budapest Hotel", y:2014, dir:"Wes Anderson", dk:99, imdb:8.1, genres:["komedi","dram"], eras:["e20"], syn:"Efsanevi bir otelin konsiyerjiyle genç yamağının, bir cinayet gizemi ve miras kavgasına karıştığı renkli macera.", guclu:["Özgün görsel estetik ve simetri","Esprili diyaloglar"], farkli:["Stilize anlatım herkese hitap etmeyebilir"]},
+    {t:"Klaus", y:2019, dir:"Sergio Pablos", dk:96, imdb:8.2, genres:["animasyon","komedi"], eras:["e19"], syn:"Uzak bir kasabaya sürgün edilen bencil bir postacının, gizemli bir marangozla dostluğu sayesinde Noel Baba efsanesinin doğuşunu anlatan sıcak hikâye.", guclu:["Özgün ışıklandırma teknikleri","Sıcak dostluk teması"], farkli:["Klasik kalıpları takip eder"]},
+    {t:"Chef", y:2014, dir:"Jon Favreau", dk:114, imdb:7.3, genres:["komedi","dram"], eras:["e21"], syn:"Kariyerinde tıkanan bir şefin, küçük bir yemek kamyonuyla yeniden tutkusunu ve oğluyla bağını bulma hikâyesi.", guclu:["Sıcak baba-oğul ilişkisi","Keyifli ve rahat tempo"], farkli:["Hafif ve risksiz bir akışı vardır"]},
+    {t:"March of the Penguins", y:2005, dir:"Luc Jacquet", dk:80, imdb:7.5, genres:["belgesel"], eras:["e21"], syn:"Antarktika'nın zorlu koşullarında imparator penguenlerin üreme döngüsünü ve hayatta kalma azmini anlatan görkemli bir doğa belgeseli.", guclu:["Etkileyici doğa görüntüleri","Dingin anlatım"], farkli:["Yavaş bir tempoya sahiptir"]},
+    {t:"Amélie", y:2001, dir:"Jean-Pierre Jeunet", dk:122, imdb:8.3, genres:["romantik","komedi"], eras:["e20"], syn:"Paris'te yaşayan hayalperest Amélie'nin, çevresindekilerin hayatına gizlice iyilik yaparken kendi aşkını bulma hikâyesi.", guclu:["Renkli ve masalsı dil","Paris atmosferi"], farkli:["Aşırı stilize bulunabilir"]},
+    {t:"Paddington 2", y:2017, dir:"Paul King", dk:103, imdb:7.8, genres:["komedi","fantastik"], eras:["e21"], syn:"Nazik ayı Paddington, sevdiği bir hediyeyi çalınca kendini bir maceranın ve haksız bir suçlamanın içinde bulur.", guclu:["Nazik mizah anlayışı","İyimser ton"], farkli:["Fazla naif bulunabilir"]},
+    {t:"Hidden Figures", y:2016, dir:"Theodore Melfi", dk:127, imdb:7.8, genres:["dram","tarihi","belgesel"], eras:["e20"], syn:"NASA'nın uzay yarışında kilit rol oynayan üç Afro-Amerikalı kadın matematikçinin başarıya ulaşma hikâyesi.", guclu:["Gerçek olaylara dayalı ilham kaynağı","Güçlü kadın karakterler"], farkli:["Klasik biyografi kalıplarındadır"]},
+    {t:"The Lord of the Rings: The Fellowship of the Ring", y:2001, dir:"Peter Jackson", dk:178, imdb:8.8, genres:["fantastik","aksiyon","dram"], eras:["belirsiz"], syn:"Küçük bir yüzüğün yok edilmesi için yola çıkan cesur bir birliğin Orta Dünya'daki destansı ve tehlikeli yolculuğu.", guclu:["Muazzam dünya inşası","Unutulmaz müzikler ve karakterler"], farkli:["Uzun soluklu bir serinin ilk adımıdır"]},
+    {t:"The Dark Knight", y:2008, dir:"Christopher Nolan", dk:152, imdb:9.0, genres:["aksiyon","gerilim","dram"], eras:["e21"], syn:"Batman, Gotham şehrini kaosa sürüklemeye çalışan suç dehası Joker ile yüzleşirken ahlaki sınırlarının en ağır sınavını verir.", guclu:["Heath Ledger'ın efsanevi performansı","Derin ve karanlık senaryo"], farkli:["Karanlık tonu bazı izleyiciler için ağır olabilir"]}
   ];
 
   const JOKES = [
     "Bir dahi olarak söyleyeyim: senaryo yazmak kolay, iyi senaryo yazmak ise lambanın içinde üç dilek hakkı bulmak kadar zor! 😄",
     "Film önerisi mi? Sihrimi biraz da olsa Netflix algoritmasına borçlu değilim, merak etmeyin! 🧞✨",
-    "Popcorn'unuzu hazırlayın Efendim, ben burada tam 10 lamba dolusu öneri hazırlıyorum! 🍿",
-    "Bir dilek daha hakkınız olsaydı ne isterdiniz? Ben şimdilik sadece güzel bir film önerisi sunayım. 😉"
+    "Popcorn'unuzu hazırlayın Efendim, ben burada tam 20 lamba dolusu öneri hazırlıyorum! 🍿",
+    "Bir dilek daha hakkınız olsaydı ne isterdiniz? Ben şimdilik size harika bir 20'li film listesi sunayım. 😉"
   ];
 
   const $ = (sel) => document.querySelector(sel);
@@ -719,7 +625,7 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
   }
 
   function recommend(genreId, eraId, count){
-    count = count || 10;
+    count = count || 20;
     let pool = MOVIES.slice();
     if(genreId) pool = pool.filter(m => m.genres.includes(genreId));
     if(eraId) pool = pool.filter(m => m.eras.includes(eraId));
@@ -772,7 +678,7 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
       </div>
       <div class="detail-content">
         <div class="detail-tags">
-          <span class="tag res">⭐ ${m.imdb.toFixed(1)} IMDb (yaklaşık)</span>
+          <span class="tag res">⭐ ${m.imdb.toFixed(1)} IMDb</span>
           <span class="tag free">${m.dk} dk</span>
           <span class="tag res">${m.y}</span>
         </div>
@@ -878,10 +784,10 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
 
   function runRecommendationFlow(genreId, eraId, genreLabel, eraLabel){
     const label = [genreLabel, eraLabel].filter(Boolean).join(" · ") || "Karma";
-    addMsg(`Anlaşıldı Efendim! <strong>${label}</strong> için yüksek kaliteli, ilham verici 10 film hazırlıyorum. 🧞‍♂️`, "genie");
+    addMsg(`Anlaşıldı Efendim! <strong>${label}</strong> için geniş kütüphanemden tam 20 ilham verici film hazırlıyorum. 🧞‍♂️`, "genie");
     conjure(() => {
-      const list = recommend(genreId, eraId, 10);
-      addMsg(`İşte sizin için özenle seçilmiş 10 film! Hepsi kaliteli ve ilham verici. 📽️${maybeJoke()}`, "genie");
+      const list = recommend(genreId, eraId, 20);
+      addMsg(`İşte sizin için özenle seçilmiş 20 filmlik dev kütüphane önerisi! 📽️${maybeJoke()}`, "genie");
       renderResults(label, list);
     });
   }
@@ -908,7 +814,7 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
       if(genreGuess){
         runRecommendationFlow(genreGuess, null, GENRES.find(g=>g.id===genreGuess).label, null);
       } else {
-        addMsg(`Yüksek kaliteli, ilham verici 10 film önerisi hazırlayabilmem için biraz daha fikrinizi almak isterim Efendim! 😊${maybeJoke()}`, "genie", [
+        addMsg(`Geniş kütüphanemden 20 harika film önerebilmem için bana bir tür ya da dönem söyleyebilir misiniz Efendim? 😊${maybeJoke()}`, "genie", [
           {label:"🎬 Film Türleri", onClick:() => { showView("view-genres"); }},
           {label:"⏳ Dönem Seçimi", onClick:() => { showView("view-eras"); }},
           {label:"✨ Rastgele Öner", onClick:() => randomFlow()}
@@ -920,17 +826,17 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
   function randomFlow(){
     addMsg("Rastgele sihir yapıyorum! 🔮", "genie");
     conjure(() => {
-      const list = recommend(null, null, 10);
-      addMsg(`İşte fal taşı gibi açık, karma bir liste! 🎲${maybeJoke()}`, "genie");
-      renderResults("Rastgele Öneriler", list);
+      const list = recommend(null, null, 20);
+      addMsg(`İşte geniş kütüphanemden seçtiğim 20 filmik sürpriz liste! 🎲${maybeJoke()}`, "genie");
+      renderResults("Rastgele 20 Öneri", list);
     });
   }
 
   function initialGreeting(){
     addMsg(
-      `Merhaba Efendim! 🧞‍♂️🧞‍♀️ Ben sizin özel oluşturduğunuz bir 🎬 Film Beyni'yim! 🧠<br>` +
-      `Size nasıl yardımcı olabilirim, nasılsınız?<br><br>` +
-      `Bana bir tür, dönem söyleyin ya da aşağıdaki kısayolları kullanın — hemen yüksek kaliteli, ilham verici 10 film önerisi hazırlayayım! ✨`,
+      `Merhaba Efendim! 🧞‍♂️🧞‍♀️ Ben sizin özel oluşturduğunuz 🎬 Film Beyni'yim! 🧠<br>` +
+      `Genişletilmiş yeni film kütüphanemle artık her aramada <strong>20 harika film</strong> sunuyorum.<br><br>` +
+      `Bana bir tür veya dönem söyleyin ya da aşağıdaki kısayolları kullanın — hemen hazırlıklara başlayayım! ✨`,
       "genie"
     );
   }
