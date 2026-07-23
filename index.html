@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ==========================================================================
-   FILM BEYNİ — Design tokens
+   FILM BEYNİ — Design tokens & Play Store Style
    ========================================================================== */
 :root{
   --ink-950:#0a0a16;
@@ -86,9 +86,24 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:.02em;margin:0;}
   gap:6px; text-align:center; padding:24px;
 }
 
-.lamp-wrap{position:relative; width:220px; height:260px; margin-bottom:18px;}
+/* ÖZEL PLAY STORE TARZI UYGULAMA İKONU */
+.app-icon-badge{
+  width:104px; height:104px; border-radius:24px;
+  background:linear-gradient(135deg, #1b1740, #0a0a16);
+  border:2.5px solid var(--gold-400);
+  box-shadow: 0 10px 30px rgba(124,92,255,0.5), inset 0 0 15px rgba(242,193,78,0.25);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  position:relative; margin-bottom:14px;
+}
+.app-icon-badge::after{
+  content:""; position:absolute; inset:-6px; border-radius:30px;
+  border:1px dashed rgba(242,193,78,0.35); pointer-events:none;
+}
+.app-icon-emoji{font-size:3.2rem; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.5));}
+
+.lamp-wrap{position:relative; width:160px; height:180px; margin-bottom:10px;}
 .smoke-cloud{
-  position:absolute; left:50%; bottom:70px; width:26px; height:26px;
+  position:absolute; left:50%; bottom:50px; width:22px; height:22px;
   transform:translateX(-50%);
   background:radial-gradient(circle, rgba(155,130,255,0.9), rgba(155,130,255,0) 70%);
   filter:blur(2px);
@@ -97,21 +112,21 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:.02em;margin:0;}
 @keyframes rise{
   0%{opacity:0; transform:translate(-50%,0) scale(.4);}
   20%{opacity:.9;}
-  100%{opacity:0; transform:translate(-30%,-190px) scale(3.4) rotate(25deg);}
+  100%{opacity:0; transform:translate(-30%,-150px) scale(3) rotate(25deg);}
 }
 .lamp-svg{position:absolute; bottom:0; left:0; width:100%; height:auto;
-  filter:drop-shadow(0 0 18px rgba(242,193,78,0.45));}
+  filter:drop-shadow(0 0 14px rgba(242,193,78,0.4));}
 .lamp-body{fill:var(--gold-400); stroke:var(--gold-600); stroke-width:1.5;}
 .lamp-spout,.lamp-tip{fill:none; stroke:var(--gold-400); stroke-width:6; stroke-linecap:round;}
 .lamp-tip{fill:var(--gold-400); stroke:none;}
 .lamp-lid,.lamp-lid-top{fill:var(--gold-300); stroke:var(--gold-600); stroke-width:1;}
 .lamp-shadow{fill:rgba(0,0,0,.45); filter:blur(4px);}
 
-.splash-title{font-size:1.6rem; color:var(--paper);}
-.splash-sub{font-family:var(--font-display); color:var(--mist); margin:2px 0 18px; font-size:.95rem;}
-.brand{font-family:var(--font-deco); font-size:2.4rem; color:var(--gold-300);
-  text-shadow:0 0 24px rgba(247,216,120,.5); margin-top:4px;}
-.brand-tag{color:var(--mist); font-size:.8rem; letter-spacing:.08em; margin-top:6px;}
+.splash-title{font-size:1.5rem; color:var(--paper);}
+.splash-sub{font-family:var(--font-display); color:var(--mist); margin:2px 0 14px; font-size:.9rem;}
+.brand{font-family:var(--font-deco); font-size:2.2rem; color:var(--gold-300);
+  text-shadow:0 0 24px rgba(247,216,120,.5); margin-top:2px;}
+.brand-tag{color:var(--mist); font-size:.78rem; letter-spacing:.08em; margin-top:4px;}
 
 /* ================= APP SHELL ================= */
 .app{
@@ -248,8 +263,8 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:.02em;margin:0;}
 /* ---- profile ---- */
 .profile-body{flex:1; display:flex; flex-direction:column; align-items:center; padding:30px 20px; overflow-y:auto;}
 .profile-avatar{
-  width:96px;height:96px;border-radius:50%; background:radial-gradient(circle at 35% 30%, var(--violet-400), var(--ink-800));
-  display:flex; align-items:center; justify-content:center; font-size:2.6rem; border:2px solid var(--gold-400);
+  width:96px;height:96px;border-radius:24px; background:radial-gradient(circle at 35% 30%, var(--violet-400), var(--ink-800));
+  display:flex; align-items:center; justify-content:center; font-size:2.8rem; border:2px solid var(--gold-400);
   box-shadow:var(--shadow-glow); margin-bottom:14px;
 }
 .profile-name{color:var(--gold-300);}
@@ -324,16 +339,8 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
   <div class="stars"></div>
   <div class="splash-moon"></div>
   <div class="splash-content">
-    <div class="lamp-wrap" id="splashLamp">
-      <div class="smoke-cloud" id="smokeCloud"></div>
-      <svg class="lamp-svg" viewBox="0 0 200 120" aria-hidden="true">
-        <ellipse cx="100" cy="108" rx="70" ry="8" class="lamp-shadow"/>
-        <path d="M40 92 Q45 60 90 55 L90 45 Q90 35 100 35 Q110 35 110 45 L110 55 Q150 58 158 82 Q160 92 148 96 L48 96 Q38 96 40 92 Z" class="lamp-body"/>
-        <path d="M148 88 Q175 82 182 68" class="lamp-spout"/>
-        <circle cx="182" cy="66" r="4" class="lamp-tip"/>
-        <rect x="93" y="30" width="14" height="10" rx="2" class="lamp-lid"/>
-        <ellipse cx="100" cy="30" rx="9" ry="4" class="lamp-lid-top"/>
-      </svg>
+    <div class="app-icon-badge">
+      <span class="app-icon-emoji">🧞</span>
     </div>
     <h1 class="splash-title">Hoş Geldiniz</h1>
     <p class="splash-sub">→ Efendim ←</p>
@@ -913,3 +920,4 @@ button:focus-visible, input:focus-visible{outline:2px solid var(--gold-400); out
 </script>
 </body>
 </html>
+
